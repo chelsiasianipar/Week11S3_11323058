@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Button from './button';
+import LoginForm from './login'; // Mengimpor LoginForm dari file login.js
+
+function buttonClick() {
+  console.log("Button is clicked");
+  alert("Button is clicked");
+}
+
+function handleSubmit() {
+  console.log('You clicked submit.');
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Event Handling</h1>
+      <br /><hr />
+      <Button onClick={buttonClick} />
+      <LoginForm onSubmit={handleSubmit} /> {/* Menggunakan LoginForm sebagai komponen */}
     </div>
   );
 }
